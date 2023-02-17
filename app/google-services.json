@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "890736022060",
+    "project_id": "shopshoes-64ec9",
+    "storage_bucket": "shopshoes-64ec9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:890736022060:android:00320ecd83f2351d6af789",
+        "android_client_info": {
+          "package_name": "com.nhuy.shopshoesproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "890736022060-a2kqvn2g7doj4beqlrd1jmvonk7ab94e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nhuy.shopshoesproject",
+            "certificate_hash": "e090e7cf4316f91a9fb6013cbb99a8a6a5312e3c"
+          }
+        },
+        {
+          "client_id": "890736022060-fv8mp7aj6j6b4ul3fji53i7l37u0utgo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAs-YC4JwJYHLuOtoDQ1c55UwCTIy07i6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "890736022060-fv8mp7aj6j6b4ul3fji53i7l37u0utgo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
