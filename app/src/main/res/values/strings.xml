@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Shop Shoes Project</string>
+    <string name="add_category">Thêm thể loại</string>
+    <string name="category">Thể loại</string>
+    <string name="view_category">Xem thể loại</string>
+    <string name="add_brand">Thêm thương hiệu</string>
+    <string name="brand">Thương hiệu</string>
+    <string name="view_brand">Xem thương hiệu</string>
 </resources>
