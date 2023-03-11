@@ -3,7 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable/button_shape.xml" value="0.1" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable/button_shape_white.xml" value="0.1" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable/ic_back_arrow.xml" value="0.1" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable/ic_camera_24.xml" value="0.1" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable/ic_search.xml" value="0.1" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable/ic_upload_photo.xml" value="0.1" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable/text_input_bg.xml" value="0.1" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_brand.xml" value="0.25416666666666665" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_new_brand.xml" value="0.2578125" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_new_category.xml" value="0.25416666666666665" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_new_product.xml" value="0.2578125" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_update_category.xml" value="0.12537993920972645" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_update_product.xml" value="0.12537993920972645" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_update_product2.xml" value="0.12537993920972645" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_view_all_brand.xml" value="0.10877192982456141" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_view_all_product.xml" value="0.1" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_view_category.xml" value="0.152" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/item_single_brand.xml" value="0.136" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/item_single_category.xml" value="0.264" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/single_product.xml" value="0.1" />
       </map>
     </option>
   </component>
