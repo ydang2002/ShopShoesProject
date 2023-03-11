@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:orientation="vertical"
-    tools:context=".view.Activity.Admin.Brand.NewBrandActivity">
+    tools:context=".view.Activity.Admin.Category.NewCategoryActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,7 +36,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:text="Thêm Thương hiệu"
+                    android:text="Thêm thể loại"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -56,13 +56,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Mã thương hiệu"
+                android:text="Mã thể loại"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/brand_id"
+                android:id="@+id/category_id"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="5dp"
@@ -81,13 +81,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:padding="5dp"
-                android:text="Tên thương hiệu"
+                android:text="Tên thể loại"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/brand_name"
+                android:id="@+id/category_name"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="5dp"
@@ -103,7 +103,7 @@
 
 
             <ProgressBar
-                android:id="@+id/progress_bar_brand"
+                android:id="@+id/progress_bar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -111,7 +111,7 @@
                 android:visibility="gone" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/add_btn_brand"
+                android:id="@+id/add_btn_category"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -128,4 +128,4 @@
         </LinearLayout>
     </LinearLayout>
 
-</RelativeLayout>
+</ScrollView>
