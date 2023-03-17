@@ -10,6 +10,6 @@
     <ImageView
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:src="@mipmap/img" />
+        android:src="@drawable/img" />
 
 </LinearLayout>

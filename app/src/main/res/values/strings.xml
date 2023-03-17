@@ -6,4 +6,6 @@
     <string name="add_brand">Thêm thương hiệu</string>
     <string name="brand">Thương hiệu</string>
     <string name="view_brand">Xem thương hiệu</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Change Password</string>
 </resources>
