@@ -82,12 +82,13 @@
                 android:layout_centerVertical="true"
                 android:text="Mã thương hiệu"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:layout_marginLeft="20dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="150dp"
+                android:layout_marginLeft="178dp"
                 android:text="Tên thương hiệu"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
