@@ -97,7 +97,6 @@ public class NewProductActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         product = new Product();
         crudController = new CrudController(NewProductActivity.this);
-//        Utils.statusBarColor(NewProductActivity.this);
     }
 
     public void goBack(View view) {
