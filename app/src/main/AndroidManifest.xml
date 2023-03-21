@@ -16,9 +16,9 @@
         <activity
             android:name=".view.Activity.Admin.Bill.CustomerBillActivity"
             android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".view.Activity.Admin.AdminHomeActivity"-->
-<!--            android:exported="false" />-->
+        <activity
+            android:name=".view.Activity.Admin.AdminHomeActivity"
+            android:exported="false" />
         <activity
             android:name=".view.Activity.Admin.Category.ViewCategoryActivity"
             android:exported="false" />
@@ -50,7 +50,7 @@
             android:name=".view.Activity.Admin.Brand.NewBrandActivity"
             android:exported="false" />
         <activity
-            android:name=".view.Activity.Admin.AdminHomeActivity"
+            android:name=".view.Activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
