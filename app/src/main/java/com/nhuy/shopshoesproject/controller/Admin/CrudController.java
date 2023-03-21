@@ -167,7 +167,6 @@ public class CrudController extends AppCompatActivity {
 //    }
 
 
-
     public void getDataFromFirebase(ProgressBar progressBar, String collection, ArrayList<Product> productArrayList, TextView noText, RecyclerView recyclerView, ProductsAdapter mAdapter) {
         progressBar.setVisibility(View.VISIBLE);
         final int[] counter = {0};
@@ -187,11 +186,10 @@ public class CrudController extends AppCompatActivity {
                                 productArrayList.add(product);
                                 counter[0]++;
                                 if (counter[0] == task.getResult().size()) {
-                                    if(productArrayList.size()>0){
+                                    if (productArrayList.size() > 0) {
                                         recyclerView.setVisibility(View.VISIBLE);
                                         noText.setVisibility(View.GONE);
-                                    }
-                                    else{
+                                    } else {
                                         recyclerView.setVisibility(View.GONE);
                                         noText.setVisibility(View.VISIBLE);
                                         mAdapter.notifyDataSetChanged();
@@ -216,14 +214,14 @@ public class CrudController extends AppCompatActivity {
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
             }
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (s.toString().trim().length() == 0) {
-                    if(productArrayList.size()!=0){
+                    if (productArrayList.size() != 0) {
                         recyclerView.setVisibility(View.VISIBLE);
                         noText.setVisibility(View.GONE);
-                    }
-                    else{
+                    } else {
                         recyclerView.setVisibility(View.GONE);
                         noText.setVisibility(View.VISIBLE);
                     }
@@ -238,20 +236,20 @@ public class CrudController extends AppCompatActivity {
                             clone.add(element);
                         }
                     }
-                    if(clone.size()!=0){
+                    if (clone.size() != 0) {
                         recyclerView.setVisibility(View.VISIBLE);
                         noText.setVisibility(View.GONE);
-                    }
-                    else{
+                    } else {
                         recyclerView.setVisibility(View.GONE);
                         noText.setVisibility(View.VISIBLE);
                     }
 
-                    mAdapter = new ProductsAdapter(clone, context,true);
+                    mAdapter = new ProductsAdapter(clone, context, true);
                     recyclerView.setAdapter(mAdapter);
                     mAdapter.notifyDataSetChanged();
                 }
             }
+
             @Override
             public void afterTextChanged(Editable s) {
 
