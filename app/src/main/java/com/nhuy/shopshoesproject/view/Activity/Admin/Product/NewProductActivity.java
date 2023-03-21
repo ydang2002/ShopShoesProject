@@ -189,7 +189,7 @@ public class NewProductActivity extends AppCompatActivity {
         });
     }
 
-    private void checkData(){
+    private void checkData() {
         String name = nameEt.getText().toString().trim();
         String id = idProductEt.getText().toString().trim();
         String price = priceEt.getText().toString().trim();
