@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.Continuation;
@@ -38,8 +39,11 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.nhuy.shopshoesproject.R;
+import com.nhuy.shopshoesproject.models.BrandModel;
 import com.nhuy.shopshoesproject.models.Product;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Product.NewProductActivity;
+import com.nhuy.shopshoesproject.view.Adapter.BrandAdapter;
+import com.nhuy.shopshoesproject.view.Adapter.HiddenProductAdapter;
 import com.nhuy.shopshoesproject.view.Adapter.ProductsAdapter;
 import com.nhuy.shopshoesproject.view.constants.Constants;
 
@@ -172,7 +176,9 @@ public class CrudController extends AppCompatActivity {
         final int[] counter = {0};
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         CollectionReference reference = db.collection(collection);
-        reference.get()
+        reference
+                .whereEqualTo("hidden", false)
+                .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@org.checkerframework.checker.nullness.qual.NonNull Task<QuerySnapshot> task) {

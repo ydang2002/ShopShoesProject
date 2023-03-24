@@ -7,6 +7,7 @@ public class Product implements Serializable {
     int quantityInCart;
     int price,stock;
     int sold = 0;
+    boolean hidden;
     public int getSold() {
         return sold;
     }
@@ -112,6 +113,14 @@ public class Product implements Serializable {
 
     public void setPhotoUrl(String photoUrl) {
         this.photoUrl = photoUrl;
+    }
+
+    public boolean getHidden() {
+        return hidden;
+    }
+
+    public void setHidden(boolean hidden) {
+        this.hidden = hidden;
     }
 
     @Override
