@@ -235,6 +235,7 @@ public class NewProductActivity extends AppCompatActivity {
             product.setColor(color);
             product.setStock(Integer.parseInt(stock));
             product.setDescription(desc);
+            product.setHidden(false);
 
             crudController.UploadImage(filePath, progressBar, Constants.IMAGES, product, id);
         }
