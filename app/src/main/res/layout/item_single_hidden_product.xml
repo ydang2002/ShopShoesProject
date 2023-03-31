@@ -48,10 +48,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
                 android:background="@drawable/button_shape_hidden"
-                android:text="Ẩn"
-                android:textColor="@color/white"
-                android:layout_marginRight="5dp"/>
+                android:textColor="@color/white" />
 
         </RelativeLayout>
     </LinearLayout>
