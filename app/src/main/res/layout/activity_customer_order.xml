@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".view.Activity.Admin.Bill.CustomerBillActivity">
+    tools:context=".view.Activity.Admin.Order.CustomerOrderActivity">
+
 
     <RelativeLayout
         android:id="@+id/toolbar_oder_list"
@@ -16,7 +17,7 @@
         <ImageView
             android:id="@+id/cart_back_arrow"
             android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_height="4dp"
             android:layout_centerVertical="true"
             android:layout_marginStart="20dp"
             android:onClick="goBack"
@@ -29,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Danh sách hóa đơn"
+            android:text="Danh sách Đơn hàng"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -41,28 +42,30 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar_oder_list"
+        android:layout_marginTop="2dp"
         android:overScrollMode="never"
         android:visibility="visible"
         tools:listitem="@layout/single_order_item" />
+
     <TextView
         android:id="@+id/no_customer_order"
-        android:gravity="center"
-        android:text="Không có đơn hàng"
-        android:textSize="16sp"
-        android:visibility="gone"
-        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:gravity="center"
+        android:text="Không có đơn hàng"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:visibility="gone" />
 
     <ProgressBar
         android:id="@+id/spin_progress_bar_customer_order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
-        android:visibility="gone"
-        android:layout_centerInParent="true"/>
+        android:visibility="gone" />
 
 </RelativeLayout>
