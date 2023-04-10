@@ -21,6 +21,7 @@ import com.nhuy.shopshoesproject.view.Activity.Admin.Category.ViewCategoryActivi
 import com.nhuy.shopshoesproject.view.Activity.Admin.Product.HiddenProduct;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Product.NewProductActivity;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Product.ViewAllProductActivity;
+import com.nhuy.shopshoesproject.view.Activity.Customer.CustomersLoginActivity;
 
 public class AdminHomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout mDrawerLayout;
@@ -52,11 +53,11 @@ public class AdminHomeActivity extends AppCompatActivity implements NavigationVi
             Intent intent = new Intent(getApplicationContext(), NewProductActivity.class);
             startActivity(intent);
         }
-//        else if (id == R.id.nav_logout) {
-//            Intent intent = new Intent(AdminHome.this, LoginActivity.class);
-//            startActivity(intent);
-//            Toast.makeText(this, "Logout successful", Toast.LENGTH_SHORT).show();
-//        }
+        else if (id == R.id.nav_logout) {
+            Intent intent = new Intent(AdminHomeActivity.this, CustomersLoginActivity.class);
+            startActivity(intent);
+            Toast.makeText(this, "Logout successful", Toast.LENGTH_SHORT).show();
+        }
 //        else if (id == R.id.nav_customer_statistic) {
 //            Intent intent = new Intent(AdminHome.this, statisticActivity.class);
 //            startActivity(intent);

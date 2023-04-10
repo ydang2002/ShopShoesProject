@@ -4,13 +4,19 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable-v24/edit_image_btn.xml" value="0.1" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable-v24/edittext_bg.xml" value="0.1" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable-v24/ic_baseline_add_admin.xml" value="0.1" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable-v24/ic_baseline_assignment_turned_in_24.xml" value="0.1" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable-v24/ic_baseline_check_24.xml" value="0.1" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable-v24/ic_baseline_email_24.xml" value="0.1" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable-v24/ic_baseline_home_admin.xml" value="0.1" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable-v24/ic_baseline_lock_24.xml" value="0.1" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable-v24/ic_baseline_logout.xml" value="0.1" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable-v24/ic_baseline_person_24.xml" value="0.1" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable-v24/ic_baseline_table_chart_24.xml" value="0.1" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable-v24/ic_baseline_view_list.xml" value="0.1" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable-v24/ic_location.xml" value="0.1" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable-v24/radio_button.xml" value="0.1" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable-v24/side_nav_bar.xml" value="0.1" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable/button_shape.xml" value="0.1" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable/button_shape_hidden.xml" value="0.1" />
@@ -22,14 +28,18 @@
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable/ic_upload_photo.xml" value="0.1" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable/text_input_bg.xml" value="0.1" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_admin_home.xml" value="0.13609467455621302" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_admin_login.xml" value="0.25416666666666665" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_brand.xml" value="0.25416666666666665" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_customer_bill.xml" value="0.4" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_customer_order.xml" value="0.4" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_customer_order_detail_main.xml" value="0.536" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_customers_login.xml" value="0.25416666666666665" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_hidden_product.xml" value="0.4" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_new_brand.xml" value="0.10810810810810811" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_new_category.xml" value="0.25416666666666665" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_new_product.xml" value="0.264" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_update_brand.xml" value="0.25416666666666665" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_update_category.xml" value="0.12537993920972645" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_update_product.xml" value="0.12537993920972645" />
