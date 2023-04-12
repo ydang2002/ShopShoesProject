@@ -51,7 +51,7 @@ public class CartActivity extends AppCompatActivity {
                 order.getCartProductList().clear();
                 order.setTotalPrice(0);
                 productArrayList.clear();
-                cartController.
+                cartController.updateOrderToFirebase(order);
                 totalPriceView.setText("0 VND");
                 cartCustomAdapter.notifyDataSetChanged();
             }
@@ -80,24 +80,21 @@ public class CartActivity extends AppCompatActivity {
     }
 
     private void initAll() {
-        cartController = new CartController(this);
+        cartController = new CartController(CartActivity.this);
         order=new OrderModel();
+        cartRecyclerView=findViewById(R.id.cart_order_recyclerview);
+        cartRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        cartRecyclerView.setNestedScrollingEnabled(false);
         productArrayList =new ArrayList<>();
         totalPriceView=findViewById(R.id.cart_total_price_view);
+
         deleteCart=findViewById(R.id.delete_cart_imageView);
         cartBackArrow=findViewById(R.id.cart_back_arrow);
 
-        cartController.
+        cartController.getOrderFormFirebase(cartRecyclerView,totalPriceView);
 
 
-        // Double price=Double.toString());
-        //totalPriceView.setText(new DecimalFormat("##.##").format(order.getTotalPrice()));
 
-//        cartRecyclerView=findViewById(R.id.cart_order_recyclerview);
-//        cartCustomAdapter=new CartCustomAdapter(CartActivity.this, productArrayList,order);
-//        cartRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        cartRecyclerView.setNestedScrollingEnabled(false);
-//        cartRecyclerView.setAdapter(cartCustomAdapter);
         checkOut=findViewById(R.id.check_out_btn);
 
 

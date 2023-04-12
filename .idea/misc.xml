@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/BT_Android/New folder/ShopShoesProject/app/src/main/res/drawable-v24/button_shape.xml" value="0.178" />
+        <entry key="..\:/BT_Android/New folder/ShopShoesProject/app/src/main/res/drawable-v24/ic_baseline_delete_24.xml" value="0.178" />
+        <entry key="..\:/BT_Android/New folder/ShopShoesProject/app/src/main/res/layout/activity_cart.xml" value="0.22447916666666667" />
+        <entry key="..\:/BT_Android/New folder/ShopShoesProject/app/src/main/res/layout/single_cart_item.xml" value="0.22447916666666667" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable-v24/edit_image_btn.xml" value="0.1" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable-v24/edittext_bg.xml" value="0.1" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/drawable-v24/ic_baseline_add_admin.xml" value="0.1" />

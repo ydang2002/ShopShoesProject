@@ -38,7 +38,7 @@ public class CartController {
         order=new OrderModel();
     }
 
-    private void getOrderFormFirebase(RecyclerView cartRecyclerView, TextView totalPriceView){
+    public void getOrderFormFirebase(RecyclerView cartRecyclerView, TextView totalPriceView){
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -46,8 +46,6 @@ public class CartController {
                     order = snapshot.getValue(OrderModel.class);
                     productArrayList = (ArrayList<Product>) order.getProductArrayList().clone();
                     cartCustomAdapter = new CartAdapter(context, productArrayList,order);
-                    cartRecyclerView.setLayoutManager(new LinearLayoutManager(context));
-                    cartRecyclerView.setNestedScrollingEnabled(false);
                     cartRecyclerView.setAdapter(cartCustomAdapter);
                     totalPriceView.setText((int)order.getTotalPrice() + " VND");
                 }
@@ -61,7 +59,7 @@ public class CartController {
             }
         });
     }
-    private void updateOrderToFirebase(){
+    public void updateOrderToFirebase(OrderModel order){
         String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         DatabaseReference myRootRef = FirebaseDatabase.getInstance().getReference();;
         myRootRef.child("Cart").child(currentUserId).setValue(order).addOnSuccessListener(new OnSuccessListener<Void>() {
