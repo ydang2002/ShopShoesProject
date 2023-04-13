@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.nhuy.shopshoesproject.R;
+import com.nhuy.shopshoesproject.view.Activity.Admin.Brand.HiddenBrandActivity;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Brand.NewBrandActivity;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Brand.ViewAllBrandActivity;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Category.NewCategoryActivity;
@@ -78,7 +79,11 @@ public class AdminHomeActivity extends AppCompatActivity implements NavigationVi
         } else if (id == R.id.nav_hidden_product) {
             Intent intent = new Intent(AdminHomeActivity.this, HiddenProduct.class);
             startActivity(intent);
+        } else if (id == R.id.nav_hidden_brand) {
+            Intent intent = new Intent(AdminHomeActivity.this, HiddenBrandActivity.class);
+            startActivity(intent);
         }
+
 //        else if (id == R.id.nav_customer_order) {
 //            Intent intent = new Intent(AdminHomeActivity.this, CustomerOderActivity.class);
 //            startActivity(intent);

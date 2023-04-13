@@ -4,12 +4,8 @@ import static android.content.ContentValues.TAG;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,19 +23,21 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.nhuy.shopshoesproject.models.BrandModel;
 import com.nhuy.shopshoesproject.models.Product;
 import com.nhuy.shopshoesproject.view.Adapter.BrandAdapter;
-import com.nhuy.shopshoesproject.view.Adapter.ProductsAdapter;
+import com.nhuy.shopshoesproject.view.Adapter.HiddenBrandAdapter;
 
 import java.util.ArrayList;
 
-public class BrandController {
-
-    private Context context;
+public class HiddenBrandController {
+    private HiddenBrandAdapter hiddenBrandAdapter;
     private FirebaseFirestore db;
-    private BrandAdapter mBrandAdapter;
+    private Context context;
 
-    public BrandController(Activity Context) {
-        context = Context;
+    public HiddenBrandController(Activity Context) {
         db = FirebaseFirestore.getInstance();
+        context = Context;
+    }
+
+    public HiddenBrandController() {
 
     }
 
@@ -47,13 +45,12 @@ public class BrandController {
         Toast.makeText(context.getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 
-    public void getDataFromFirebase(ProgressBar progressBar, String collection, ArrayList<BrandModel> brandArrayList, TextView noText, RecyclerView recyclerView, BrandAdapter mAdapter, Activity context) {
+    public void getDataFromFirebase(ProgressBar progressBar, String collection, ArrayList<BrandModel> brandArrayList, TextView noText, RecyclerView recyclerView, HiddenBrandAdapter mAdapter, Activity context) {
         progressBar.setVisibility(View.VISIBLE);
         final int[] counter = {0};
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         CollectionReference reference = db.collection(collection);
-        reference.whereEqualTo("hidden", false)
-                .get()
+        reference.get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@org.checkerframework.checker.nullness.qual.NonNull Task<QuerySnapshot> task) {
@@ -68,11 +65,11 @@ public class BrandController {
                                 if (counter[0] == task.getResult().size()) {
                                     if (brandArrayList.size() > 0) {
 
-                                        mBrandAdapter = new BrandAdapter(context, brandArrayList);
+                                        hiddenBrandAdapter = new HiddenBrandAdapter(context, brandArrayList);
                                         recyclerView.setNestedScrollingEnabled(false);
                                         recyclerView.setLayoutManager(new LinearLayoutManager(context));
-                                        recyclerView.setAdapter(mBrandAdapter);
-                                        mBrandAdapter.notifyDataSetChanged();
+                                        recyclerView.setAdapter(hiddenBrandAdapter);
+                                        hiddenBrandAdapter.notifyDataSetChanged();
 
                                         recyclerView.setVisibility(View.VISIBLE);
                                         noText.setVisibility(View.GONE);
@@ -95,68 +92,17 @@ public class BrandController {
                 });
     }
 
-    public void searchFunc(EditText nameInput, ArrayList<BrandModel> brandArrayList, RecyclerView recyclerView, TextView noBranch, Activity context) {
-        nameInput.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (s.toString().trim().length() == 0) {
-                    if (brandArrayList.size() != 0) {
-                        recyclerView.setVisibility(View.VISIBLE);
-                        noBranch.setVisibility(View.GONE);
-                    } else {
-                        recyclerView.setVisibility(View.GONE);
-                        noBranch.setVisibility(View.VISIBLE);
-                    }
-
-                    mBrandAdapter = new BrandAdapter(context, brandArrayList);
-                    recyclerView.setAdapter(mBrandAdapter);
-                    mBrandAdapter.notifyDataSetChanged();
-                } else {
-                    ArrayList<BrandModel> clone = new ArrayList<>();
-                    for (BrandModel element : brandArrayList) {
-                        if (element.getBrandName().toLowerCase().contains(s.toString().toLowerCase())) {
-                            clone.add(element);
-                        }
-                    }
-                    if (clone.size() != 0) {
-                        recyclerView.setVisibility(View.VISIBLE);
-                        noBranch.setVisibility(View.GONE);
-                    } else {
-                        recyclerView.setVisibility(View.GONE);
-                        noBranch.setVisibility(View.VISIBLE);
-                    }
-
-                    mBrandAdapter = new BrandAdapter(context, clone);
-                    recyclerView.setAdapter(mBrandAdapter);
-                    mBrandAdapter.notifyDataSetChanged();
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-    }
-
-    public void UpdateDataCategory(ProgressBar progressBar, String collection, BrandModel brand, String docsID ) {
-        progressBar.setVisibility(View.VISIBLE);
+    public void hiddenBrand(BrandModel brandModel, String collection, String docsID) {
+        db = FirebaseFirestore.getInstance();
         db.collection(collection).document(docsID)
-                .update("brandId", brand.getBrandId(),
-                        "brandName", brand.getBrandName())
+                .update(
+
+                        "hidden", brandModel.getHidden()
+                )
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        showMessage("Sửa thông tin thành công");
-                        progressBar.setVisibility(View.GONE);
                     }
                 });
-        ((Activity) context).finish();
     }
-
 }

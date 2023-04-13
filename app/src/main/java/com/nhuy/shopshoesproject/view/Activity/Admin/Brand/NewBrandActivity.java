@@ -55,14 +55,15 @@ public class NewBrandActivity extends AppCompatActivity {
                 String id = idBrand.getText().toString().trim();
 
                 if(TextUtils.isEmpty(id)) {
-                    idBrand.setError("Nhập mã thể loại");
+                    idBrand.setError("Nhập mã thương hiệu");
                     idBrand.requestFocus();
                 } else if(TextUtils.isEmpty(name)) {
-                    nameBrand.setError("Nhập tên thể loại");
+                    nameBrand.setError("Nhập tên thương hiệu");
                     nameBrand.requestFocus();
                 } else {
                     brand.setBrandId(id);
                     brand.setBrandName(name);
+                    brand.setHidden(false);
                     crudControllerr.saveDatabase(id, Constants.BRAND, brand);
                 }
             }

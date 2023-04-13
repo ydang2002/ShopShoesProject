@@ -16,7 +16,7 @@
 
         <item
             android:id="@+id/nav_hidden_product"
-            android:icon="@drawable/hidden"
+            android:icon="@drawable/ic_baseline_remove_red_eye_24"
             android:title="Ẩn/Hiển thị sản phẩm" />
 
         <item
@@ -63,6 +63,11 @@
                 android:id="@+id/nav_view_brand"
                 android:icon="@drawable/ic_baseline_home_admin"
                 android:title="@string/view_brand" />
+
+            <item
+                android:id="@+id/nav_hidden_brand"
+                android:icon="@drawable/ic_baseline_remove_red_eye_24"
+                android:title="Ẩn/Hiển thị thương hiệu" />
         </menu>
     </item>
 </menu>

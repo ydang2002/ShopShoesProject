@@ -103,7 +103,7 @@ public class CrudController extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(context.getApplicationContext(), android.R.layout.simple_spinner_item, data);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        subjectsRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        subjectsRef.whereEqualTo("hidden", false).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@org.checkerframework.checker.nullness.qual.NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {

@@ -34,9 +34,10 @@
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_customer_order.xml" value="0.4" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_customer_order_detail_main.xml" value="0.536" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_customers_login.xml" value="0.25416666666666665" />
-        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_hidden_product.xml" value="0.4" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_hidden_brand.xml" value="0.25416666666666665" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_hidden_product.xml" value="0.264" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_new_brand.xml" value="0.10810810810810811" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_new_brand.xml" value="0.264" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_new_category.xml" value="0.25416666666666665" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_new_product.xml" value="0.264" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
@@ -52,12 +53,13 @@
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/item_single_brand.xml" value="0.1" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/item_single_category.xml" value="0.264" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/item_single_hidden_Product.xml" value="0.25416666666666665" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/item_single_hidden_brand.xml" value="0.1" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/item_single_hidden_product.xml" value="0.320695102685624" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/nav_header_main.xml" value="0.1" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/single_order_item.xml" value="0.354916067146283" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/single_product.xml" value="0.1" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/single_product_order_item.xml" value="0.264" />
-        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/menu/activity_admin_main_drawer.xml" value="0.2578125" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/menu/activity_admin_main_drawer.xml" value="0.8" />
       </map>
     </option>
   </component>
