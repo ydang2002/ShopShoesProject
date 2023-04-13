@@ -49,7 +49,7 @@ public class HiddenProduct extends AppCompatActivity {
 
     private void innit() {
         productArrayList = new ArrayList<Product>();
-        recyclerView = findViewById(R.id.brand_recyclerview_hidden);
+        recyclerView = findViewById(R.id.product_recyclerview_hidden);
         progressBar = findViewById(R.id.progress_bar_hidden);
         noText = findViewById(R.id.no_hidden);
         product = new Product();

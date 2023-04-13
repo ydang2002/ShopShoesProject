@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".view.Activity.Admin.Product.HiddenProduct">
+    tools:context=".view.Activity.Admin.Brand.HiddenBrandActivity">
 
     <RelativeLayout
         android:id="@+id/toolbar"
@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Ẩn/Hiển thị sản phẩm"
+            android:text="Ẩn/Hiển thị thương hiệu"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -46,7 +46,7 @@
         app:cardCornerRadius="50dp">
 
         <EditText
-            android:id="@+id/name_input_hidden"
+            android:id="@+id/name_input_hidden_brand"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="20dp"
@@ -55,7 +55,7 @@
             android:drawableStart="@drawable/ic_search"
             android:drawableTint="@color/grey"
             android:gravity="center"
-            android:hint="Tìm sản phẩm"
+            android:hint="Tìm thương hiệu"
             android:inputType="text"
             android:maxLines="1"
             android:textColor="@color/black"
@@ -80,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="Mã sản phẩm"
+                android:text="Mã thương hiệu"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
@@ -88,24 +88,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="148dp"
-                android:text="Tên sản phẩm"
+                android:text="Tên thương hiệu"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
         </RelativeLayout>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/product_recyclerview_hidden"
+        android:id="@+id/brand_recyclerview_hidden"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cart3"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:nestedScrollingEnabled="false"
-        tools:listitem="@layout/item_single_hidden_product" />
+        tools:listitem="@layout/item_single_hidden_brand" />
 
     <TextView
-        android:id="@+id/no_hidden"
+        android:id="@+id/no_hidden_brand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -117,7 +117,7 @@
         android:visibility="gone" />
 
     <ProgressBar
-        android:id="@+id/progress_bar_hidden"
+        android:id="@+id/progress_bar_hidden_brand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"

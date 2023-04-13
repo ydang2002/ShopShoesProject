@@ -14,9 +14,11 @@
         android:theme="@style/Theme.ShopShoesProject"
         tools:targetApi="31">
         <activity
-            android:name=".view.Activity.Admin.AdminLoginActivity"
+            android:name=".view.Activity.Admin.Brand.HiddenBrandActivity"
             android:exported="false" />
-        <!-- <activity -->
+        <activity
+            android:name=".view.Activity.Admin.AdminLoginActivity"
+            android:exported="false" /> <!-- <activity -->
         <!-- android:name=".view.Activity.Customer.CustomersLoginActivity" -->
         <!-- android:exported="false" /> -->
         <activity
