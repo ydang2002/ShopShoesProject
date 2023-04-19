@@ -17,15 +17,16 @@ import com.squareup.picasso.Picasso;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.MyViewHolder>{
 
-    List<Product> productList;
+    ArrayList<Product> productList;
     Activity context;
     boolean isAdmin;
 
-    public ProductsAdapter(List<Product> productList, Activity context, boolean isAdmin) {
+    public ProductsAdapter(ArrayList<Product> productList, Activity context, boolean isAdmin) {
         this.productList = productList;
         this.context = context;
         this.isAdmin=isAdmin;

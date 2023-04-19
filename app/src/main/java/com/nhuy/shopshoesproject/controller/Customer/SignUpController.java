@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.nhuy.shopshoesproject.models.CustomerModel;
-import com.nhuy.shopshoesproject.view.Activity.MainActivity;
+import com.nhuy.shopshoesproject.view.Activity.Customer.MainActivity;
 
 public class SignUpController {
 
