@@ -7,12 +7,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,14 +21,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.nhuy.shopshoesproject.models.AdminModel;
 import com.nhuy.shopshoesproject.models.CustomerModel;
 import com.nhuy.shopshoesproject.models.PeopleModel;
 import com.nhuy.shopshoesproject.view.Activity.Admin.AdminHomeActivity;
-import com.nhuy.shopshoesproject.view.Activity.Customer.CustomersLoginActivity;
-import com.nhuy.shopshoesproject.view.Activity.MainActivity;
-
-import java.util.ArrayList;
+import com.nhuy.shopshoesproject.view.Activity.Customer.MainActivity;
 
 public class LoginController {
 
@@ -37,6 +33,7 @@ public class LoginController {
     private Context context;
     private boolean flag = false;
     int count =0;
+    private PeopleModel user;
     private CustomerModel customerModel;
 
 
@@ -98,6 +95,27 @@ public class LoginController {
                     progressBar.setVisibility(View.GONE);
                     loginBtn.setVisibility(View.VISIBLE);
                 }
+            }
+        });
+    }
+    public void getProfileData(TextView UserNameDrawer) {
+        String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = database.getReference("Users").child(currentUserId);
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if (snapshot.exists()) {
+                    user = snapshot.getValue(PeopleModel.class);
+                    UserNameDrawer.setText(user.getName());
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
     }
