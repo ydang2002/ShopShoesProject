@@ -11,10 +11,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.shopshoes.Activity.ProductDetailActivity;
-import com.example.shopshoes.Model.Product;
-import com.example.shopshoes.R;
 import com.nhuy.shopshoesproject.R;
 import com.nhuy.shopshoesproject.models.Product;
 import com.squareup.picasso.Picasso;
