@@ -1,4 +1,4 @@
-package com.example.shopshoes.Adapter;
+package com.nhuy.shopshoesproject.view.Adapter;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,12 +11,14 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.shopshoes.Activity.ProductDetailActivity;
 import com.example.shopshoes.Model.Product;
 import com.example.shopshoes.R;
+import com.nhuy.shopshoesproject.R;
+import com.nhuy.shopshoesproject.models.Product;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class OrderProductDetailAdapter extends RecyclerView.Adapter<OrderProductDetailAdapter.MyViewHolder> {
@@ -34,7 +36,7 @@ public class OrderProductDetailAdapter extends RecyclerView.Adapter<OrderProduct
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.single_product_order_item, parent, false);
 
-        return new OrderProductDetailAdapter.MyViewHolder(itemView);
+        return new MyViewHolder(itemView);
     }
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {

@@ -12,7 +12,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,14 +20,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.nhuy.shopshoesproject.models.AdminModel;
 import com.nhuy.shopshoesproject.models.CustomerModel;
-import com.nhuy.shopshoesproject.models.PeopleModel;
 import com.nhuy.shopshoesproject.view.Activity.Admin.AdminHomeActivity;
-import com.nhuy.shopshoesproject.view.Activity.Customer.CustomersLoginActivity;
-import com.nhuy.shopshoesproject.view.Activity.MainActivity;
-
-import java.util.ArrayList;
+import com.nhuy.shopshoesproject.view.Activity.Customer.MainActivity;
 
 public class LoginController {
 

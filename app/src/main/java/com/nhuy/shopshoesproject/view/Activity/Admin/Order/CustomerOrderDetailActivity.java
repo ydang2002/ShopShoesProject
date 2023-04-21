@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.nhuy.shopshoesproject.R;
 
-public class CustomerOrderDetailMainActivity extends AppCompatActivity {
+public class CustomerOrderDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

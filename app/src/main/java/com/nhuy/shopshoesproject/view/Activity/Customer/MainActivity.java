@@ -1,4 +1,4 @@
-package com.nhuy.shopshoesproject.view.Activity;
+package com.nhuy.shopshoesproject.view.Activity.Customer;
 
 import androidx.appcompat.app.AppCompatActivity;
 

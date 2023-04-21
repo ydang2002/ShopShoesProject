@@ -10,14 +10,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.nhuy.shopshoesproject.R;
 import com.nhuy.shopshoesproject.controller.Customer.LoginController;
-import com.nhuy.shopshoesproject.view.Activity.Admin.AdminHomeActivity;
 import com.nhuy.shopshoesproject.view.Activity.Admin.AdminLoginActivity;
-import com.nhuy.shopshoesproject.view.Activity.MainActivity;
 import com.nhuy.shopshoesproject.view.constants.Constants;
 
 public class CustomersLoginActivity extends AppCompatActivity {
