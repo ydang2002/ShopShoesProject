@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -31,6 +32,7 @@ public class LoginController {
     private Context context;
     private boolean flag = false;
     int count =0;
+    private PeopleModel user;
     private CustomerModel customerModel;
 
 
@@ -92,6 +94,27 @@ public class LoginController {
                     progressBar.setVisibility(View.GONE);
                     loginBtn.setVisibility(View.VISIBLE);
                 }
+            }
+        });
+    }
+    public void getProfileData(TextView UserNameDrawer) {
+        String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = database.getReference("Users").child(currentUserId);
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if (snapshot.exists()) {
+                    user = snapshot.getValue(PeopleModel.class);
+                    UserNameDrawer.setText(user.getName());
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
     }
