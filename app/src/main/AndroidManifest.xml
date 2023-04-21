@@ -25,7 +25,7 @@
             android:name=".view.Activity.Customer.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".view.Activity.Admin.Order.CustomerOrderDetailMainActivity"
+            android:name=".view.Activity.Admin.Order.CustomerOrderDetailActivity"
             android:exported="false" />
         <activity
             android:name=".view.Activity.Admin.Order.CustomerOrderActivity"

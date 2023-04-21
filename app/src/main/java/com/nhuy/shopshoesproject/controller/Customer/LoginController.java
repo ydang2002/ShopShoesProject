@@ -22,7 +22,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.nhuy.shopshoesproject.models.CustomerModel;
-import com.nhuy.shopshoesproject.models.PeopleModel;
 import com.nhuy.shopshoesproject.view.Activity.Admin.AdminHomeActivity;
 import com.nhuy.shopshoesproject.view.Activity.Customer.MainActivity;
 
