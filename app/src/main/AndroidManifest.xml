@@ -70,6 +70,9 @@
             android:name=".view.Activity.Admin.Brand.NewBrandActivity"
             android:exported="false" />
         <activity
+            android:name=".view.Activity.Customer.ProductDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.Activity.Customer.MainActivity"
             android:exported="false" />
         <activity

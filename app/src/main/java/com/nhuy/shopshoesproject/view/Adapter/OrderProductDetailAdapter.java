@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.nhuy.shopshoesproject.R;
 import com.nhuy.shopshoesproject.models.Product;
+import com.nhuy.shopshoesproject.view.Activity.Customer.ProductDetailActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
