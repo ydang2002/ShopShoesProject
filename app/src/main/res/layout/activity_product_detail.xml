@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.nhuy.shopshoesproject.view.Activity.Customer.ProductDetailActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ic_back"
+            android:layout_width="@dimen/back_arrow_dimen"
+            android:layout_height="@dimen/back_arrow_dimen"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:onClick="goBack"
+            android:src="@drawable/ic_back_arrow"
+            app:tint="@color/black" />
+
+        <TextView
+            android:id="@+id/medicine_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Thông tin Sản phẩm"
+            android:textColor="@color/black"
+            android:textSize="@dimen/toolbar_text_size"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/add_to_cart"
+        android:layout_below="@+id/relativeLayout1">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/product_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:scaleType="centerCrop" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/bottom_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/product_img"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/product_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/crimson_text_semibold"
+                        android:text="Facial Cleanser"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/product_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Facial Cleanser is the best face wash for your skin"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/card1_t2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Loại sản phẩm"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/product_detail_category"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="10dp"
+                            android:text="Giày"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/card1_t4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/card1_t2"
+                            android:layout_marginTop="10dp"
+                            android:text="Thương hiệu"
+                            android:textColor="@color/black"
+
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/product_detail_brand"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/product_detail_category"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="10dp"
+                            android:text="Nike"
+                            android:textColor="@color/black"
+
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/card1_t5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/card1_t4"
+                            android:layout_marginTop="10dp"
+                            android:text="Size"
+                            android:textColor="@color/black"
+
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/product_detail_size"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/product_detail_brand"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="10dp"
+                            android:text="40"
+                            android:textColor="@color/black"
+
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/card1_t6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/card1_t5"
+                            android:layout_marginTop="10dp"
+                            android:text="Màu sắc"
+                            android:textColor="@color/black"
+
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/product_detail_color"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/product_detail_size"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="10dp"
+                            android:text="Red"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+    </ScrollView>
+    <RelativeLayout
+        android:id="@+id/add_to_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp"
+        android:background="@color/LoginBackground"
+        android:elevation="0dp">
+
+        <TextView
+            android:id="@+id/product_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/crimson_text_semibold"
+            android:text="$9.99"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:layout_toLeftOf="@id/add_to_cart_btn"
+            android:background="@drawable/quantity_background"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/minus_btn"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="-"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/quantity_tv"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="1"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/plus_btn"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="+"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/add_to_cart_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:elevation="10dp"
+            app:cardBackgroundColor="@color/black"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:text="Cart"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+
+</RelativeLayout>
