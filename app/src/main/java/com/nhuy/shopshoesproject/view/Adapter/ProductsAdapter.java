@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.nhuy.shopshoesproject.R;
 import com.nhuy.shopshoesproject.models.Product;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Product.UpdateProductActivity;
+import com.nhuy.shopshoesproject.view.Activity.Customer.ProductDetailActivity;
 import com.squareup.picasso.Picasso;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -64,12 +65,12 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.MyView
                         intent.putExtra("product",product);
                         context.startActivity(intent);
                     }
-//                    else {
-//                        Intent intent = new Intent(context, ProductDetailActivity.class);
-//                        intent.putExtra("productId", product.getProductId());
-//                        intent.putExtra("product",product);
-//                        context.startActivity(intent);
-//                    }
+                    else {
+                        Intent intent = new Intent(context, ProductDetailActivity.class);
+                        intent.putExtra("productId", product.getProductId());
+                        intent.putExtra("product",product);
+                        context.startActivity(intent);
+                    }
                     
                 }
 

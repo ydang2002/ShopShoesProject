@@ -18,15 +18,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.nhuy.shopshoesproject.R;
+import com.nhuy.shopshoesproject.controller.Customer.OrderController;
 import com.nhuy.shopshoesproject.models.OrderModel;
+import com.nhuy.shopshoesproject.models.Product;
 import com.nhuy.shopshoesproject.view.Adapter.OrderAdapter;
+import com.nhuy.shopshoesproject.view.Adapter.ProductsAdapter;
 
 import java.util.ArrayList;
 
@@ -41,9 +38,9 @@ public class FragmentOrder extends Fragment  {
     private RecyclerView recyclerView;
     private ArrayList<OrderModel> orderArrayList;
     private TextView noJokeText;
-    DatabaseReference myRootRef;
     private ProgressBar progressBar;
     FragmentActivity c;
+    private OrderController orderController;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -93,8 +90,8 @@ public class FragmentOrder extends Fragment  {
         recyclerView =view.findViewById(R.id.order_list);
         progressBar = view.findViewById(R.id.spin_progress_bar_order);
         noJokeText = view.findViewById(R.id.no_order);
-        myRootRef = FirebaseDatabase.getInstance().getReference();
         c = getActivity();
+        orderController = new OrderController(c);
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(c,DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(dividerItemDecoration);
         mAdapter = new OrderAdapter(orderArrayList,c, false);
@@ -102,41 +99,34 @@ public class FragmentOrder extends Fragment  {
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
-        getDataFromFirebase();
+        orderController.getOrderFromFirebase(new OrderController.FirebaseCallback() {
+            @Override
+            public void onCallback(ArrayList<OrderModel> orderModelArrayList) {
+                if (orderModelArrayList.size()>0) {
+                    orderArrayList.clear();
+                    orderArrayList = (ArrayList<OrderModel>) orderModelArrayList.clone();
+                    setData();
+                    progressBar.setVisibility(View.GONE);
+                }
+                else {
+                    noJokeText.setVisibility(View.VISIBLE);
+                    progressBar.setVisibility(View.GONE);
+
+                }
+            }
+        });
         //Toast.makeText(getActivity(),orderArrayList.size()+" size", Toast.LENGTH_LONG).show();
         return view;
     }
-    public void getDataFromFirebase() {
 
-        progressBar.setVisibility(View.VISIBLE);
-        String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference = database.getReference("Order").child(currentUserId);
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                orderArrayList.clear();
-                for (DataSnapshot post : snapshot.getChildren()){
-                    OrderModel order = post.getValue(OrderModel.class);
-                    orderArrayList.add(order);
-                }
-                mAdapter.notifyDataSetChanged();
-                setData();
-                progressBar.setVisibility(View.GONE);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                noJokeText.setVisibility(View.VISIBLE);
-                progressBar.setVisibility(View.GONE);
-                Toast.makeText(c,"Error", Toast.LENGTH_LONG).show();
-
-            }
-        });
-    }
 
     private void setData() {
         if(orderArrayList.size()>0){
+            for(OrderModel i : orderArrayList){
+            }
+            mAdapter = new OrderAdapter(orderArrayList,c,false);
+            recyclerView.setAdapter(mAdapter);
+            mAdapter.notifyDataSetChanged();
             recyclerView.setVisibility(View.VISIBLE);
             noJokeText.setVisibility(View.GONE);
         }

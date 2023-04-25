@@ -37,19 +37,17 @@ public class CartController {
         databaseReference = database.getReference("Cart").child(currentUserId);
         order=new OrderModel();
     }
-
-    public void getOrderFormFirebase(RecyclerView cartRecyclerView, TextView totalPriceView){
+    public interface FirebaseCallback{
+        void onCallback(OrderModel orderModel);
+    }
+    public void getCartFormFirebase(FirebaseCallback firebaseCallback){
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     order = snapshot.getValue(OrderModel.class);
-                    productArrayList = (ArrayList<Product>) order.getProductArrayList().clone();
-                    cartCustomAdapter = new CartAdapter(context, productArrayList,order);
-                    cartRecyclerView.setAdapter(cartCustomAdapter);
-                    totalPriceView.setText((int)order.getTotalPrice() + " VND");
                 }
-
+                firebaseCallback.onCallback(order);
             }
 
             @Override
@@ -59,7 +57,7 @@ public class CartController {
             }
         });
     }
-    public void updateOrderToFirebase(OrderModel order){
+    public void updateCartToFirebase(OrderModel order){
         String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         DatabaseReference myRootRef = FirebaseDatabase.getInstance().getReference();;
         myRootRef.child("Cart").child(currentUserId).setValue(order).addOnSuccessListener(new OnSuccessListener<Void>() {

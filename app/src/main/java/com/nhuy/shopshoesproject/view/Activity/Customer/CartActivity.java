@@ -51,7 +51,7 @@ public class CartActivity extends AppCompatActivity {
                 order.getCartProductList().clear();
                 order.setTotalPrice(0);
                 productArrayList.clear();
-                cartController.updateOrderToFirebase(order);
+                cartController.updateCartToFirebase(order);
                 totalPriceView.setText("0 VND");
                 cartCustomAdapter.notifyDataSetChanged();
             }
@@ -91,15 +91,23 @@ public class CartActivity extends AppCompatActivity {
         deleteCart=findViewById(R.id.delete_cart_imageView);
         cartBackArrow=findViewById(R.id.cart_back_arrow);
 
-        cartController.getOrderFormFirebase(cartRecyclerView,totalPriceView);
-
+        cartController.getCartFormFirebase(new CartController.FirebaseCallback() {
+            @Override
+            public void onCallback(OrderModel orderModel) {
+                productArrayList = (ArrayList<Product>) orderModel.getProductArrayList().clone();
+                cartRecyclerView=findViewById(R.id.cart_order_recyclerview);
+                cartCustomAdapter=new CartAdapter(CartActivity.this, productArrayList,order);
+                cartRecyclerView.setLayoutManager(new LinearLayoutManager(CartActivity.this));
+                cartRecyclerView.setNestedScrollingEnabled(false);
+                cartRecyclerView.setAdapter(cartCustomAdapter);
+                totalPriceView.setText((int)order.getTotalPrice() + " VND");
+            }
+        });
 
 
         checkOut=findViewById(R.id.check_out_btn);
 
 
     }
-
-
 
 }

@@ -210,11 +210,8 @@ public class FragmentHome extends Fragment {
 
 
     private void setData() {
-        Log.d("TestProduct3:", productArrayList.size()+" ");
         if(productArrayList.size()>0){
-            Log.d("TestProduct2:", productArrayList.size()+" ");
             for(Product i : productArrayList){
-                Log.d("TestProduct2:", i.toString());
             }
             mAdapter = new ProductsAdapter(productArrayList,c,false);
             recyclerView.setAdapter(mAdapter);
