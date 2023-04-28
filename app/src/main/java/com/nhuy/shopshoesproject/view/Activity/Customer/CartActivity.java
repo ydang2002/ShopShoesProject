@@ -102,7 +102,6 @@ public class CartActivity extends AppCompatActivity {
                 cartRecyclerView.setLayoutManager(new LinearLayoutManager(CartActivity.this));
                 cartRecyclerView.setNestedScrollingEnabled(false);
                 cartRecyclerView.setAdapter(cartCustomAdapter);
-                Log.d("LogTotalPrice: ", String.valueOf((int)order.getTotalPrice()));
                 totalPriceView.setText((int)order.getTotalPrice() + " VND");
             }
         });
