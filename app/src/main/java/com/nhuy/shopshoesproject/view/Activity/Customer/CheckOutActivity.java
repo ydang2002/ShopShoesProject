@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.nhuy.shopshoesproject.R;
+
 public class CheckOutActivity extends AppCompatActivity {
 
     @Override
