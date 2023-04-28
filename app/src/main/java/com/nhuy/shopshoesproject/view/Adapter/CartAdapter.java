@@ -48,7 +48,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         holder.name.setText(product.getName());
         holder.price.setText(product.getPrice()+" VND");
         holder.quantity.setText(product.getQuantityInCart()+"");
-        Log.d("LogTotalPriceAdapter: ", String.valueOf(order.getTotalPrice()));
         if (product.getPhotoUrl() != null) {
             if (!product.getPhotoUrl().equals("")) {
                 Picasso.get().load(product.getPhotoUrl()).placeholder(R.drawable.icon).into(holder.image);

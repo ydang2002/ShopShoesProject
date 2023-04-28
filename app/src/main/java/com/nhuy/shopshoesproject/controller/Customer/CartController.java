@@ -53,9 +53,9 @@ public class CartController {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     order = snapshot.getValue(OrderModel.class);
-                    Log.d("LogTotalController: ", String.valueOf(order.getTotalPrice()));
                 }
                 firebaseCallback.onCallback(order);
+                Log.d("LogTotalController: ", String.valueOf(order.getTotalPrice()));
             }
 
             @Override
