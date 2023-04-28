@@ -1,6 +1,7 @@
 package com.nhuy.shopshoesproject.controller.Customer;
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
@@ -18,6 +19,7 @@ import com.nhuy.shopshoesproject.models.OrderModel;
 import com.nhuy.shopshoesproject.models.Product;
 
 import com.nhuy.shopshoesproject.view.Adapter.CartAdapter;
+import com.nhuy.shopshoesproject.view.constants.Constants;
 
 import java.util.ArrayList;
 
@@ -38,14 +40,20 @@ public class CartController {
         order=new OrderModel();
     }
     public interface FirebaseCallback{
-        void onCallback(OrderModel orderModel);
+        void onCallback(OrderModel order);
     }
+
+    public void showMessage(String message) {
+        Toast.makeText(context.getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
     public void getCartFormFirebase(FirebaseCallback firebaseCallback){
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     order = snapshot.getValue(OrderModel.class);
+                    Log.d("LogTotalController: ", String.valueOf(order.getTotalPrice()));
                 }
                 firebaseCallback.onCallback(order);
             }
@@ -60,7 +68,7 @@ public class CartController {
     public void updateCartToFirebase(OrderModel order){
         String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         DatabaseReference myRootRef = FirebaseDatabase.getInstance().getReference();;
-        myRootRef.child("Cart").child(currentUserId).setValue(order).addOnSuccessListener(new OnSuccessListener<Void>() {
+        myRootRef.child(Constants.CART).child(currentUserId).setValue(order).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
             }

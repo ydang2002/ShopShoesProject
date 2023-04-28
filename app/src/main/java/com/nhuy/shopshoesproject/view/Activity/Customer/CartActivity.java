@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -62,8 +63,8 @@ public class CartActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if(order.getTotalPrice()>0){
-//                    Intent intent=new Intent(CartActivity.this,CheckOutActivity.class);
-//                    startActivity(intent);
+                    Intent intent=new Intent(CartActivity.this,CheckOutActivity.class);
+                    startActivity(intent);
                 }
                 else{
                     Toast.makeText(CartActivity.this, "Không có sản phẩm trong giỏ hàng", Toast.LENGTH_SHORT).show();
@@ -94,12 +95,14 @@ public class CartActivity extends AppCompatActivity {
         cartController.getCartFormFirebase(new CartController.FirebaseCallback() {
             @Override
             public void onCallback(OrderModel orderModel) {
+                order = orderModel;
                 productArrayList = (ArrayList<Product>) orderModel.getProductArrayList().clone();
                 cartRecyclerView=findViewById(R.id.cart_order_recyclerview);
                 cartCustomAdapter=new CartAdapter(CartActivity.this, productArrayList,order);
                 cartRecyclerView.setLayoutManager(new LinearLayoutManager(CartActivity.this));
                 cartRecyclerView.setNestedScrollingEnabled(false);
                 cartRecyclerView.setAdapter(cartCustomAdapter);
+                Log.d("LogTotalPrice: ", String.valueOf((int)order.getTotalPrice()));
                 totalPriceView.setText((int)order.getTotalPrice() + " VND");
             }
         });

@@ -14,20 +14,30 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.nhuy.shopshoesproject.models.BrandModel;
+import com.nhuy.shopshoesproject.models.OrderModel;
 import com.nhuy.shopshoesproject.models.Product;
 import com.nhuy.shopshoesproject.view.Adapter.BrandAdapter;
 import com.nhuy.shopshoesproject.view.Adapter.ProductsAdapter;
+import com.nhuy.shopshoesproject.view.constants.Constants;
 
 import java.util.ArrayList;
 
@@ -36,10 +46,12 @@ public class ProductController {
     private Context context;
     private FirebaseFirestore db;
     private ProductsAdapter productsAdapter;
+    private OrderModel order;
 
     public ProductController(Activity Context) {
         context = Context;
         db = FirebaseFirestore.getInstance();
+        order = new OrderModel();
 
     }
 
@@ -73,6 +85,45 @@ public class ProductController {
                         firebaseCallback.onCallback(productArrayList);
                     }
                 });
+    }
+
+    public void getOrderFormFirebase(){
+        String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = database.getReference(Constants.CART).child(currentUserId);
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if (snapshot.exists()) {
+                    order = snapshot.getValue(OrderModel.class);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    public void addOrderToFirebase(OrderModel order){
+        String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        DatabaseReference myRootRef = FirebaseDatabase.getInstance().getReference();;
+        myRootRef.child(Constants.CART).child(currentUserId).setValue(order).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                showMessage("Đã thêm vào giỏ hàng");
+                ((Activity) context).finish();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                showMessage(" Lỗi");
+            }
+        });
     }
 
 //    public void searchFunc(EditText nameInput, ArrayList<BrandModel> brandArrayList, RecyclerView recyclerView, TextView noBranch, Activity context) {
