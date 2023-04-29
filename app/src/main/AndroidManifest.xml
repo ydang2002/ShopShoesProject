@@ -14,6 +14,9 @@
         android:theme="@style/Theme.ShopShoesProject"
         tools:targetApi="31">
         <activity
+            android:name=".view.Activity.Customer.OrderDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.Activity.Customer.CheckOutActivity"
             android:exported="false" />
         <activity
@@ -28,7 +31,7 @@
             android:name=".view.Activity.Customer.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".view.Activity.Admin.Order.CustomerOrderDetailActivity"
+            android:name=".view.Activity.Admin.Order.AllCustomerOrderDetailActivity"
             android:exported="false" />
         <activity
             android:name=".view.Activity.Admin.Order.CustomerOrderActivity"

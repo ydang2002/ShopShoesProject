@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.Activity.Admin.Order.AllCustomerOrderDetailActivity">
-
-
+    tools:context=".view.Activity.Customer.OrderDetailActivity">
     <RelativeLayout
         android:id="@+id/relativeLayout1"
         android:layout_width="match_parent"
@@ -22,7 +20,6 @@
             android:layout_height="@dimen/back_arrow_dimen"
             android:layout_centerVertical="true"
             android:layout_marginStart="20dp"
-            android:onClick="goBack"
             android:src="@drawable/ic_back_arrow"
             app:tint="@color/black" />
 
@@ -48,18 +45,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:orientation="vertical"
             android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="50dp"
-            android:orientation="vertical">
+            android:layout_marginBottom="50dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
                 android:elevation="10dp"
-                app:cardCornerRadius="10dp">
-
+                android:layout_height="wrap_content">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -69,8 +65,8 @@
                         android:id="@+id/card1_t1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mã đơn hàng"
-                        android:textColor="@color/black"
+                        android:text="Mã hóa đơn"
+                        android:textColor="#77000000"
                         android:textSize="15sp" />
 
                     <TextView
@@ -158,6 +154,7 @@
                         android:textSize="15sp" />
 
 
+
                     <TextView
                         android:id="@+id/order_delivery"
                         android:layout_width="wrap_content"
@@ -168,7 +165,6 @@
                         android:text="10.000 VND"
                         android:textColor="#CB111111"
                         android:textSize="15sp" />
-
                     <TextView
                         android:id="@+id/card1_t8"
                         android:layout_width="wrap_content"
@@ -190,21 +186,17 @@
                         android:text="10.000 VND"
                         android:textColor="#CB111111"
                         android:textSize="15sp" />
-
-
                 </RelativeLayout>
 
 
             </androidx.cardview.widget.CardView>
-
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="2dp"
+                app:cardCornerRadius="10dp"
                 android:elevation="10dp"
-                app:cardCornerRadius="10dp">
-
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="10dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -220,13 +212,10 @@
                         android:textStyle="bold" />
 
                     <LinearLayout
-                        android:id="@+id/order_layout"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/card3_t1"
-                        android:layout_marginTop="10dp"
-                        android:orientation="vertical">
-
+                       android:id="@+id/order_layout"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content" android:layout_below="@+id/card3_t1"
+                       android:orientation="vertical" android:layout_marginTop="10dp">
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/product_list_order"
                             android:layout_width="match_parent"
@@ -235,18 +224,16 @@
                             android:visibility="visible"
                             tools:listitem="@layout/single_product_order_item" />
 
-                    </LinearLayout>
+                   </LinearLayout>
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
-
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="2dp"
+                app:cardCornerRadius="10dp"
                 android:elevation="10dp"
-                app:cardCornerRadius="10dp">
-
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="10dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -263,13 +250,14 @@
 
                     <TextView
                         android:id="@+id/card2_t4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/card2_t1"
-                        android:layout_marginTop="10dp"
                         android:text="Địa chỉ"
                         android:textColor="#CB111111"
-                        android:textSize="15dp" />
+                        android:textSize="15dp"
+                        android:layout_below="@+id/card2_t1"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
 
                     <TextView
                         android:id="@+id/order_address_view"
@@ -279,7 +267,7 @@
                         android:layout_marginTop="10dp"
                         android:background="@drawable/text_input_bg"
                         android:lines="4"
-                        android:padding="15dp"
+                        android:padding="5dp"
                         android:textSize="16sp" />
 
                     <TextView
@@ -309,21 +297,21 @@
 
         </LinearLayout>
     </ScrollView>
-
     <RelativeLayout
-        android:id="@+id/order_confirm_status"
+        android:id="@+id/order_delete"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary">
+        android:gravity="center"
+        android:background="@color/red">
 
         <TextView
             android:id="@+id/checkout_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Xác Nhận đơn hàng"
-            android:textColor="@color/black"
+            android:text="Hủy đơn hàng"
+            android:textColor="@color/white"
             android:textSize="23sp"
             android:textStyle="bold" />
 
@@ -332,8 +320,9 @@
             android:layout_height="36dp"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/checkout_btn"
-            android:src="@drawable/ic_baseline_check_24" />
+            android:src="@drawable/ic_baseline_delete_forever_24" />
 
     </RelativeLayout>
+
 
 </RelativeLayout>

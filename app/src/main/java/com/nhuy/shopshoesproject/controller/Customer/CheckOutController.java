@@ -37,7 +37,7 @@ public class CheckOutController {
         order.setId(key);
         String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
         order.setDateOfOrder(currentDateTimeString);
-        order.setTotalPrice(order.getTotalPrice() + 10);
+        order.setTotalPrice(order.getTotalPrice() + 10000);
         order.setAddress(street);
         order.setComments(comments);
         //Y thêm userId
