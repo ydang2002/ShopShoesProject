@@ -62,8 +62,8 @@ public class CartActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if(order.getTotalPrice()>0){
-//                    Intent intent=new Intent(CartActivity.this,CheckOutActivity.class);
-//                    startActivity(intent);
+                    Intent intent=new Intent(CartActivity.this,CheckOutActivity.class);
+                    startActivity(intent);
                 }
                 else{
                     Toast.makeText(CartActivity.this, "Không có sản phẩm trong giỏ hàng", Toast.LENGTH_SHORT).show();
