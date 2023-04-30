@@ -1,4 +1,4 @@
-package com.nhuy.shopshoesproject.view.Activity.Admin.Bill;
+package com.nhuy.shopshoesproject.view.Activity.Admin.Order;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,46 +12,48 @@ import android.widget.TextView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.nhuy.shopshoesproject.R;
-import com.nhuy.shopshoesproject.controller.Admin.AllCustomerBillController;
 import com.nhuy.shopshoesproject.controller.Admin.AllCustomerOrderController;
 import com.nhuy.shopshoesproject.models.OrderModel;
 import com.nhuy.shopshoesproject.view.Adapter.OrderAdapter;
-import com.nhuy.shopshoesproject.view.constants.Constants;
 
 import java.util.ArrayList;
 
-public class CustomerBillActivity extends AppCompatActivity {
+public class AllCustomerOrderActivity extends AppCompatActivity {
 
     private OrderAdapter mAdapter;
     private RecyclerView recyclerView;
     private ArrayList<OrderModel> orderArrayList;
-    private TextView noOder;
-    private ProgressBar progressBar;
 
-    private AllCustomerBillController allCustomerBillController;
+    private TextView noOder;
+    private DatabaseReference databaseReference;
+    private ProgressBar progressBar;
+    private AllCustomerOrderController allCustomerOrderController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_customer_bill);
+        setContentView(R.layout.activity_customer_order);
+
         initAll();
+        allCustomerOrderController.getAdminOrders(progressBar, orderArrayList, mAdapter, noOder, recyclerView);
     }
 
     private void initAll() {
-        orderArrayList =new ArrayList<OrderModel>();
+        orderArrayList = new ArrayList<OrderModel>();
         recyclerView = findViewById(R.id.customer_order_list);
         progressBar = findViewById(R.id.spin_progress_bar_customer_order);
         noOder = findViewById(R.id.no_customer_order);
+        databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        mAdapter = new OrderAdapter(orderArrayList, CustomerBillActivity.this, true);
+        mAdapter = new OrderAdapter(orderArrayList, AllCustomerOrderActivity.this, true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setAdapter(mAdapter);
-        allCustomerBillController = new AllCustomerBillController(CustomerBillActivity.this);
-        allCustomerBillController.getAdminOrders(progressBar, orderArrayList, mAdapter, noOder, recyclerView);
         mAdapter.notifyDataSetChanged();
+        allCustomerOrderController = new AllCustomerOrderController(AllCustomerOrderActivity.this);
     }
 
     public void goBack(View view) {
+        finish();
     }
 }

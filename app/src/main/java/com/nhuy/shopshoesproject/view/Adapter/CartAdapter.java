@@ -1,6 +1,7 @@
 package com.nhuy.shopshoesproject.view.Adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import com.nhuy.shopshoesproject.R;
 import com.nhuy.shopshoesproject.models.OrderModel;
 import com.nhuy.shopshoesproject.models.Product;
 import com.nhuy.shopshoesproject.view.Activity.Customer.CartActivity;
+import com.nhuy.shopshoesproject.view.constants.Constants;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -60,7 +62,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
                 order.removeProduct(product);
                 String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
                 DatabaseReference myRootRef = FirebaseDatabase.getInstance().getReference();;
-                myRootRef.child("Cart").child(currentUserId).setValue(order);
+                myRootRef.child(Constants.CART).child(currentUserId).setValue(order);
 
 
             }
@@ -78,7 +80,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
                 CartActivity.totalPriceView.setText(String.valueOf(order.getTotalPrice())+ " VND");
                 String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
                 DatabaseReference myRootRef = FirebaseDatabase.getInstance().getReference();;
-                myRootRef.child("Cart").child(currentUserId).setValue(order);
+                myRootRef.child(Constants.CART).child(currentUserId).setValue(order);
 
 
             }
@@ -94,7 +96,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
                     CartActivity.totalPriceView.setText(String.valueOf(order.getTotalPrice())+ " VND");
                     String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
                     DatabaseReference myRootRef = FirebaseDatabase.getInstance().getReference();;
-                    myRootRef.child("Cart").child(currentUserId).setValue(order);
+                    myRootRef.child(Constants.CART).child(currentUserId).setValue(order);
 
                 }
             }

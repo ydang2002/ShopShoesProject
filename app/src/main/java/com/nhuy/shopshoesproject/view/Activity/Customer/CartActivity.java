@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -94,6 +95,7 @@ public class CartActivity extends AppCompatActivity {
         cartController.getCartFormFirebase(new CartController.FirebaseCallback() {
             @Override
             public void onCallback(OrderModel orderModel) {
+                order = orderModel;
                 productArrayList = (ArrayList<Product>) orderModel.getProductArrayList().clone();
                 cartRecyclerView=findViewById(R.id.cart_order_recyclerview);
                 cartCustomAdapter=new CartAdapter(CartActivity.this, productArrayList,order);

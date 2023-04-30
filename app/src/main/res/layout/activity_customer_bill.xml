@@ -47,7 +47,7 @@
     <TextView
         android:id="@+id/no_customer_order"
         android:gravity="center"
-        android:text="Không có đơn hàng"
+        android:text="Không có hóa hàng"
         android:textSize="16sp"
         android:visibility="gone"
         android:textColor="@color/black"

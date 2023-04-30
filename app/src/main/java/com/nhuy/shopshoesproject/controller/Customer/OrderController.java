@@ -20,6 +20,7 @@ import com.nhuy.shopshoesproject.models.Product;
 import com.nhuy.shopshoesproject.view.Activity.Customer.ProductDetailActivity;
 import com.nhuy.shopshoesproject.view.Adapter.CartAdapter;
 import com.nhuy.shopshoesproject.view.Adapter.OrderAdapter;
+import com.nhuy.shopshoesproject.view.constants.Constants;
 
 import java.util.ArrayList;
 
@@ -36,7 +37,7 @@ public class OrderController {
         context = Context;
         database = FirebaseDatabase.getInstance();;
         currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        databaseReference = database.getReference("Order").child(currentUserId);
+        databaseReference = database.getReference(Constants.ORDER).child(currentUserId);
         order=new OrderModel();
         orderArrayList = new ArrayList<>();
     }
@@ -59,7 +60,7 @@ public class OrderController {
         });
     }
     public void getOrderFromFirebase(FirebaseCallback firebaseCallback) {
-        databaseReference = database.getReference("Order").child(currentUserId);
+        databaseReference = database.getReference(Constants.ORDER).child(currentUserId);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

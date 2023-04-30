@@ -12,11 +12,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.nhuy.shopshoesproject.R;
+import com.nhuy.shopshoesproject.controller.Admin.ProductController;
 import com.nhuy.shopshoesproject.controller.Customer.CartController;
 import com.nhuy.shopshoesproject.models.OrderModel;
 import com.nhuy.shopshoesproject.models.Product;
+import com.nhuy.shopshoesproject.view.constants.Constants;
 import com.squareup.picasso.Picasso;
 
 public class ProductDetailActivity extends AppCompatActivity {
@@ -28,6 +35,7 @@ public class ProductDetailActivity extends AppCompatActivity {
 
     private Product product;
     private CartController cartController;
+    private ProductController productController;
     int quantity=1;
 
     private OrderModel order;
@@ -92,7 +100,7 @@ public class ProductDetailActivity extends AppCompatActivity {
 
                     product.setQuantityInCart(quantity);
                     order.addProduct(product);
-                    cartController.updateCartToFirebase(order);
+                    productController.addOrderToFirebase(order);
 
 
                 }
@@ -117,18 +125,38 @@ public class ProductDetailActivity extends AppCompatActivity {
         productColor=findViewById(R.id.product_detail_color);
         productSize=findViewById(R.id.product_detail_size);
         cartController = new CartController(this);
+        productController = new ProductController(this);
 
 
         product=new Product();
 
         order=new OrderModel();
-//        getOrderFormFirebase();
+        getOrderFormFirebase();
+    }
+
+    private void getOrderFormFirebase(){
+        String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = database.getReference(Constants.CART).child(currentUserId);
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if (snapshot.exists()) {
+                    order = snapshot.getValue(OrderModel.class);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     public void goBack(View view) {
         finish();
     }
-
-
 
 }
