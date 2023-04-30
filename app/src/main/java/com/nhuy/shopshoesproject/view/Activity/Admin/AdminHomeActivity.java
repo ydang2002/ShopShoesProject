@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.nhuy.shopshoesproject.R;
+import com.nhuy.shopshoesproject.view.Activity.Admin.Bill.CustomerBillActivity;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Brand.HiddenBrandActivity;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Brand.NewBrandActivity;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Brand.ViewAllBrandActivity;
@@ -88,10 +89,10 @@ public class AdminHomeActivity extends AppCompatActivity implements NavigationVi
             Intent intent = new Intent(AdminHomeActivity.this, AllCustomerOrderActivity.class);
             startActivity(intent);
         }
-//        else if (id == R.id.nav_customer_bill) {
-//            Intent intent = new Intent(AdminHome.this, CustomerBillActivity.class);
-//            startActivity(intent);
-//        }
+        else if (id == R.id.nav_customer_bill) {
+            Intent intent = new Intent(AdminHomeActivity.this, CustomerBillActivity.class);
+            startActivity(intent);
+        }
         DrawerLayout drawer = findViewById(R.id.drawer_layout_admin);
         drawer.closeDrawer(GravityCompat.START);
         return true;
