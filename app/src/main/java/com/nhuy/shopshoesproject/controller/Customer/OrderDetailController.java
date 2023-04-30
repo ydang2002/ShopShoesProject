@@ -92,7 +92,7 @@ public class OrderDetailController {
             @Override
             public void onSuccess(Void unused) {
                 showMessage("Hủy đơn hàng thành công");
-                ((Activity) context).finish();
+                mAdapter.notifyDataSetChanged();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override

@@ -127,7 +127,7 @@ public class CustomerOrderDetailController {
                             @Override
                             public void onSuccess(Void unused) {
                                 showMessage("Xác nhận đơn hàng thành công");
-                                ((Activity) context).finish();
+                                mAdapter.notifyDataSetChanged();
                             }
                         });
                     }
