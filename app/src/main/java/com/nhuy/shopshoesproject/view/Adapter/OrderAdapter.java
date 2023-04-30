@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.nhuy.shopshoesproject.R;
 import com.nhuy.shopshoesproject.models.OrderModel;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Bill.BillDetailActivity;
+import com.nhuy.shopshoesproject.view.Activity.Admin.Order.CustomerOrderDetailActivity;
 import com.nhuy.shopshoesproject.view.Activity.Customer.CustomerOderDetailActivity;
 import com.nhuy.shopshoesproject.view.Activity.Customer.OrderDetailActivity;
 
@@ -69,7 +70,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
                         context.startActivity(intent);
                     }
                     else {
-                        Intent intent = new Intent(context, CustomerOderDetailActivity.class);
+                        Intent intent = new Intent(context, CustomerOrderDetailActivity.class);
                         intent.putExtra("id", order.getId());
 //                    Log.d("showId", order.getId());
                         intent.putExtra("order", order);

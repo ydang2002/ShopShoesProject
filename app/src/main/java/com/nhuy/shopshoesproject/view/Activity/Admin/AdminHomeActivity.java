@@ -19,6 +19,7 @@ import com.nhuy.shopshoesproject.view.Activity.Admin.Brand.NewBrandActivity;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Brand.ViewAllBrandActivity;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Category.NewCategoryActivity;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Category.ViewCategoryActivity;
+import com.nhuy.shopshoesproject.view.Activity.Admin.Order.AllCustomerOrderActivity;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Product.HiddenProduct;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Product.NewProductActivity;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Product.ViewAllProductActivity;
@@ -83,11 +84,10 @@ public class AdminHomeActivity extends AppCompatActivity implements NavigationVi
             Intent intent = new Intent(AdminHomeActivity.this, HiddenBrandActivity.class);
             startActivity(intent);
         }
-
-//        else if (id == R.id.nav_customer_order) {
-//            Intent intent = new Intent(AdminHomeActivity.this, CustomerOderActivity.class);
-//            startActivity(intent);
-//        }
+        else if (id == R.id.nav_customer_order) {
+            Intent intent = new Intent(AdminHomeActivity.this, AllCustomerOrderActivity.class);
+            startActivity(intent);
+        }
 //        else if (id == R.id.nav_customer_bill) {
 //            Intent intent = new Intent(AdminHome.this, CustomerBillActivity.class);
 //            startActivity(intent);

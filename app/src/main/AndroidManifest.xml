@@ -31,10 +31,10 @@
             android:name=".view.Activity.Customer.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".view.Activity.Admin.Order.AllCustomerOrderDetailActivity"
+            android:name=".view.Activity.Admin.Order.CustomerOrderDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".view.Activity.Admin.Order.CustomerOrderActivity"
+            android:name=".view.Activity.Admin.Order.AllCustomerOrderActivity"
             android:exported="false" />
         <activity
             android:name=".view.Activity.Admin.Product.HiddenProduct"
