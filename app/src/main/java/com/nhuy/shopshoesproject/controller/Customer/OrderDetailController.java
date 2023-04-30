@@ -33,8 +33,6 @@ public class OrderDetailController {
     private Context context;
     private FirebaseDatabase database;
     private String currentUserId;
-    private DatabaseReference databaseReference;
-    private OrderModel order;
     private ArrayList<Product> productArrayList;
     private OrderProductDetailAdapter mAdapter;
 
@@ -43,7 +41,6 @@ public class OrderDetailController {
         database = FirebaseDatabase.getInstance();
         currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         productArrayList = new ArrayList<>();
-        order = new OrderModel();
     }
 
     public void showMessage(String message) {

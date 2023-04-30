@@ -13,4 +13,5 @@ public class Constants {
         public static final String ADMIN = "Admin";
         public static final String CART = "Cart";
         public static final String ORDER = "Order";
+        public static final String BILL = "Bill";
 }

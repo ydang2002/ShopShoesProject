@@ -37,7 +37,7 @@ public class OrderController {
         context = Context;
         database = FirebaseDatabase.getInstance();;
         currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        databaseReference = database.getReference("Order").child(currentUserId);
+        databaseReference = database.getReference(Constants.ORDER).child(currentUserId);
         order=new OrderModel();
         orderArrayList = new ArrayList<>();
     }
