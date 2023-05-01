@@ -82,6 +82,9 @@
             android:name=".view.Activity.Customer.ProductDetailActivity"
             android:exported="false" />
         <activity
+            android:name=".view.Activity.Customer.BillActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.Activity.Customer.MainActivity"
             android:exported="false" />
         <activity

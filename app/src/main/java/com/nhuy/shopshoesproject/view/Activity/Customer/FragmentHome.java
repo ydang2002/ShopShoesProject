@@ -131,7 +131,6 @@ public class FragmentHome extends Fragment {
         productController.getDataFromFirebase(new ProductController.FirebaseCallback() {
             @Override
             public void onCallback(ArrayList<Product> products) {
-                Log.d("TestProduct:", products.size()+" ");
                 if (products.size()>0) {
                     productArrayList.clear();
                     productArrayList = (ArrayList<Product>) products.clone();
@@ -211,8 +210,6 @@ public class FragmentHome extends Fragment {
 
     private void setData() {
         if(productArrayList.size()>0){
-            for(Product i : productArrayList){
-            }
             mAdapter = new ProductsAdapter(productArrayList,c,false);
             recyclerView.setAdapter(mAdapter);
             mAdapter.notifyDataSetChanged();

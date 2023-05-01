@@ -122,8 +122,6 @@ public class FragmentOrder extends Fragment  {
 
     private void setData() {
         if(orderArrayList.size()>0){
-            for(OrderModel i : orderArrayList){
-            }
             mAdapter = new OrderAdapter(orderArrayList,c,false);
             recyclerView.setAdapter(mAdapter);
             mAdapter.notifyDataSetChanged();
