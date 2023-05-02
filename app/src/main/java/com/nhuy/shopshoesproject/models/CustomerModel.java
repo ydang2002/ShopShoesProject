@@ -7,8 +7,8 @@ public class CustomerModel extends PeopleModel{
     public CustomerModel() {
     }
 
-    public CustomerModel(String userId, String name, String email, String address, String phoneNumber, boolean gender, String password, String photoUrl, String userType, boolean potentialCustomers) {
-        super(userId, name, email, address, phoneNumber, gender, password, photoUrl, userType);
+    public CustomerModel(String userId, String name, String email, String address, String phoneNumber, boolean gender, String photoUrl, String userType, boolean potentialCustomers) {
+        super(userId, name, email, address, phoneNumber, gender, photoUrl, userType);
         PotentialCustomers = potentialCustomers;
     }
 
