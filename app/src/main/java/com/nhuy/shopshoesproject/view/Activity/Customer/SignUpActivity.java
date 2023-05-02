@@ -126,7 +126,6 @@ public class SignUpActivity extends AppCompatActivity {
             SignupBtn.setVisibility(View.GONE);
             customerModel.setName(userName);
             customerModel.setEmail(userEmail);
-            customerModel.setPassword(userPass);
             customerModel.setAddress(userAddress);
             customerModel.setGender(gender);
             customerModel.setUserType("user");

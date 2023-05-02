@@ -7,20 +7,18 @@ public class PeopleModel {
     private String Address;
     private String phoneNumber;
     private boolean gender;
-    private String password;
     private String photoUrl;
     private String userType;
     public PeopleModel() {
     }
 
-    public PeopleModel(String userId, String name, String email, String address, String phoneNumber, boolean gender, String password, String photoUrl, String userType) {
+    public PeopleModel(String userId, String name, String email, String address, String phoneNumber, boolean gender, String photoUrl, String userType) {
         this.UserId = userId;
         this.name = name;
         this.email = email;
         this.Address = address;
         this.phoneNumber = phoneNumber;
         this.gender = gender;
-        this.password = password;
         this.photoUrl = photoUrl;
         this.userType = userType;
     }
@@ -81,13 +79,7 @@ public class PeopleModel {
         this.gender = gender;
     }
 
-    public String getPassword() {
-        return password;
-    }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public String getPhotoUrl() {
         return photoUrl;
