@@ -10,6 +10,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.nhuy.shopshoesproject.R;
+import com.nhuy.shopshoesproject.controller.Admin.BrandController;
 import com.nhuy.shopshoesproject.controller.Admin.HiddenBrandController;
 import com.nhuy.shopshoesproject.controller.Admin.HiddenProductController;
 import com.nhuy.shopshoesproject.models.BrandModel;
@@ -31,6 +32,7 @@ public class HiddenBrandActivity extends AppCompatActivity {
     private EditText nameInput;
     private BrandModel brandModel;
     private HiddenBrandController controller;
+    private BrandController brandController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,7 @@ public class HiddenBrandActivity extends AppCompatActivity {
         innit();
 
         controller.getDataFromFirebase(progressBar, Constants.BRAND, brandModelArrayList, noText, recyclerView, hiddenBrandAdapter, HiddenBrandActivity.this);
+        brandController.searchFunc(nameInput, brandModelArrayList, recyclerView, noText, HiddenBrandActivity.this);
     }
 
     private void innit() {
@@ -50,6 +53,7 @@ public class HiddenBrandActivity extends AppCompatActivity {
         brandModel = new BrandModel();
         nameInput = findViewById(R.id.name_input_hidden_brand);
         controller = new HiddenBrandController(HiddenBrandActivity.this);
+        brandController = new BrandController(HiddenBrandActivity.this);
     }
 
     public void goBack(View view) {

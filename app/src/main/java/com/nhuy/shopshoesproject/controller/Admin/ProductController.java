@@ -65,7 +65,8 @@ public class ProductController {
         ArrayList<Product> productArrayList= new ArrayList<>();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         CollectionReference reference = db.collection("Products");
-        reference.get()
+        reference.whereEqualTo("hidden", false)
+                .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@org.checkerframework.checker.nullness.qual.NonNull Task<QuerySnapshot> task) {
