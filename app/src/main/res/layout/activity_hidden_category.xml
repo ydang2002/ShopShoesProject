@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".view.Activity.Admin.Category.ViewCategoryActivity">
+    tools:context=".view.Activity.Admin.Category.HiddenCategoryActivity">
 
     <RelativeLayout
         android:id="@+id/toolbar"
@@ -18,8 +18,8 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_centerVertical="true"
-            android:onClick="goBack"
             android:layout_marginStart="20dp"
+            android:onClick="goBack"
             android:src="@drawable/ic_back_arrow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:tint="@color/black" />
@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Danh sách thể loại"
+            android:text="Ẩn/Hiển thị thể loại"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -38,42 +38,42 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card2"
-        android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
-        app:cardCornerRadius="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_height="wrap_content">
+        app:cardCornerRadius="50dp">
+
         <EditText
-            android:id="@+id/name_input"
+            android:id="@+id/name_input_hidden_category"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:gravity="center"
-            android:hint="Tìm thể loại"
             android:background="@null"
             android:drawableStart="@drawable/ic_search"
             android:drawableTint="@color/grey"
+            android:gravity="center"
+            android:hint="Tìm thể loại"
             android:inputType="text"
             android:maxLines="1"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            />
+            android:textSize="16sp" />
     </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:id="@+id/cart3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
         android:layout_below="@+id/card2"
+        android:layout_marginStart="10dp"
         android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:orientation="vertical">
 
             <TextView
@@ -81,14 +81,13 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:text="Mã thể loại"
-                android:layout_marginLeft="20dp"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="178dp"
+                android:layout_marginLeft="148dp"
                 android:text="Tên thể loại"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
@@ -96,33 +95,33 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/category_recyclerview"
+        android:id="@+id/category_recyclerview_hidden"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cart3"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
         android:nestedScrollingEnabled="false"
-        tools:listitem="@layout/item_single_category" />
+        tools:listitem="@layout/item_single_hidden_brand" />
 
     <TextView
-        android:id="@+id/no_category"
-        android:gravity="center"
-        android:text="Không tìm thấy thể loại"
-        android:textSize="16sp"
-        android:visibility="gone"
-        android:textColor="@color/black"
-        android:layout_centerInParent="true"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <ProgressBar
-        android:id="@+id/progress_bar_category"
+        android:id="@+id/no_hidden_category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Không tìm thấy thương hiệu"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar_hidden_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
-        android:visibility="gone"
-        android:layout_centerInParent="true"/>
+        android:visibility="gone" />
 </RelativeLayout>

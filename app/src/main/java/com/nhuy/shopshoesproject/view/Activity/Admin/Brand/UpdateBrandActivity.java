@@ -19,7 +19,7 @@ import com.nhuy.shopshoesproject.view.constants.Constants;
 
 public class UpdateBrandActivity extends AppCompatActivity {
 
-    private Button updateBtn, deleteBtn;
+    private Button updateBtn;
     private EditText nameBrandEdt;
     private TextView idBrandTv;
     private ProgressBar progressBar;
@@ -42,7 +42,6 @@ public class UpdateBrandActivity extends AppCompatActivity {
 
     private void initAll() {
         updateBtn = findViewById(R.id.update_btn_brand);
-        deleteBtn = findViewById(R.id.delete_btn_brand);
         idBrandTv = findViewById(R.id.brand_id_update);
         nameBrandEdt = findViewById(R.id.brand_name_update);
         progressBar = findViewById(R.id.progress_bar_brand_update);
@@ -59,7 +58,7 @@ public class UpdateBrandActivity extends AppCompatActivity {
                 String name = nameBrandEdt.getText().toString().trim();
 
                 if (TextUtils.isEmpty(name)) {
-                    nameBrandEdt.setError("Nhập tên thể loại");
+                    nameBrandEdt.setError("Nhập tên thương hiệu");
                     nameBrandEdt.requestFocus();
                 } else {
                     brand.setBrandName(name);

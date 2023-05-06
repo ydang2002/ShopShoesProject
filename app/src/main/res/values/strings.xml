@@ -8,4 +8,5 @@
     <string name="view_brand">Xem thương hiệu</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Change Password</string>
+    <string name="hidden_category">Ẩn/Hiển thị thể loại</string>
 </resources>

@@ -4,14 +4,16 @@ import java.io.Serializable;
 
 public class CategoryModel implements Serializable {
     String CategoryId,CategoryName;
+    boolean hidden;
     public CategoryModel()
     {
 
     }
-    public CategoryModel(String CategoryId, String CategoryName)
-    {
-        this.CategoryId= CategoryId;
-        this.CategoryName= CategoryName;
+
+    public CategoryModel(String categoryId, String categoryName, boolean hidden) {
+        CategoryId = categoryId;
+        CategoryName = categoryName;
+        this.hidden = hidden;
     }
 
     @Override
@@ -20,6 +22,14 @@ public class CategoryModel implements Serializable {
                 "CategoryId='" + CategoryId + '\'' +
                 ", CategoryName='" + CategoryName + '\'' +
                 '}';
+    }
+
+    public boolean getHidden() {
+        return hidden;
+    }
+
+    public void setHidden(boolean hidden) {
+        this.hidden = hidden;
     }
 
     public String getCategoryId() {

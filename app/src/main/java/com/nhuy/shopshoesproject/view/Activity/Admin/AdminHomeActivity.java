@@ -18,6 +18,7 @@ import com.nhuy.shopshoesproject.view.Activity.Admin.Bill.CustomerBillActivity;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Brand.HiddenBrandActivity;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Brand.NewBrandActivity;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Brand.ViewAllBrandActivity;
+import com.nhuy.shopshoesproject.view.Activity.Admin.Category.HiddenCategoryActivity;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Category.NewCategoryActivity;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Category.ViewCategoryActivity;
 import com.nhuy.shopshoesproject.view.Activity.Admin.Order.AllCustomerOrderActivity;
@@ -91,6 +92,10 @@ public class AdminHomeActivity extends AppCompatActivity implements NavigationVi
         }
         else if (id == R.id.nav_customer_bill) {
             Intent intent = new Intent(AdminHomeActivity.this, CustomerBillActivity.class);
+            startActivity(intent);
+        }
+        else if (id == R.id.nav_hidden_category) {
+            Intent intent = new Intent(AdminHomeActivity.this, HiddenCategoryActivity.class);
             startActivity(intent);
         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout_admin);

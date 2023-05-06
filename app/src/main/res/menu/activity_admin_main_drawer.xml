@@ -27,10 +27,10 @@
             android:id="@+id/nav_customer_bill"
             android:icon="@drawable/ic_baseline_assignment_turned_in_24"
             android:title="Hóa đơn" />
-        <item
-            android:id="@+id/nav_customer_statistic"
-            android:icon="@drawable/ic_baseline_table_chart_24"
-            android:title="Thống kê" />
+<!--        <item-->
+<!--            android:id="@+id/nav_customer_statistic"-->
+<!--            android:icon="@drawable/ic_baseline_table_chart_24"-->
+<!--            android:title="Thống kê" />-->
 
         <item
             android:id="@+id/nav_logout"
@@ -47,8 +47,13 @@
 
             <item
                 android:id="@+id/nav_view_category"
-                android:icon="@drawable/ic_baseline_home_admin"
+                android:icon="@drawable/ic_baseline_view_list"
                 android:title="@string/view_category" />
+
+            <item
+                android:id="@+id/nav_hidden_category"
+                android:icon="@drawable/ic_baseline_remove_red_eye_24"
+                android:title="@string/hidden_category" />
         </menu>
     </item>
 
@@ -61,7 +66,7 @@
 
             <item
                 android:id="@+id/nav_view_brand"
-                android:icon="@drawable/ic_baseline_home_admin"
+                android:icon="@drawable/ic_baseline_view_list"
                 android:title="@string/view_brand" />
 
             <item
