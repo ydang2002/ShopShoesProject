@@ -51,6 +51,8 @@
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_customer_order.xml" value="0.4" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_customer_order_detail_main.xml" value="0.536" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_customers_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_hidden_brand.xml" value="0.25416666666666665" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_hidden_category.xml" value="0.25416666666666665" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_hidden_product.xml" value="0.4" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_new_brand.xml" value="0.10810810810810811" />
@@ -61,14 +63,15 @@
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_update_category.xml" value="0.12537993920972645" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_update_product.xml" value="0.12537993920972645" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_update_product2.xml" value="0.12537993920972645" />
-        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_view_all_brand.xml" value="0.264" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_view_all_brand.xml" value="0.136" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_view_all_product.xml" value="0.264" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/activity_view_category.xml" value="0.1402439024390244" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/app_bar_main_admin.xml" value="0.12105263157894737" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/content_main_admin.xml" value="0.11200000000000002" />
-        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/item_single_brand.xml" value="0.1" />
-        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/item_single_category.xml" value="0.264" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/item_single_brand.xml" value="0.2725118483412322" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/item_single_category.xml" value="0.4" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/item_single_hidden_Product.xml" value="0.25416666666666665" />
+        <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/item_single_hidden_category.xml" value="0.25416666666666665" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/item_single_hidden_product.xml" value="0.320695102685624" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/nav_header_main.xml" value="0.1" />
         <entry key="..\:/src/Android/ShopShoesProject/app/src/main/res/layout/single_order_item.xml" value="0.354916067146283" />
@@ -78,7 +81,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

@@ -15,10 +15,11 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:background="@drawable/button_shape_white"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="10dp">
 
             <TextView
                 android:id="@+id/category_id"
@@ -40,12 +41,11 @@
 
             <ImageView
                 android:id="@+id/img_category_edit"
-                android:src="@drawable/edit2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                />
+                android:src="@drawable/edit2" />
         </RelativeLayout>
     </LinearLayout>
 

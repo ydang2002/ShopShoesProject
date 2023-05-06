@@ -50,7 +50,8 @@ public class CategoryController {
         final int[] counter = {0};
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         CollectionReference reference = db.collection(collection);
-        reference.get()
+        reference.whereEqualTo("hidden", false)
+                .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@org.checkerframework.checker.nullness.qual.NonNull Task<QuerySnapshot> task) {
@@ -141,11 +142,12 @@ public class CategoryController {
         });
     }
 
-    public void UpdateDataCategory(ProgressBar progressBar, String collection, CategoryModel categoryModel, String docsID ) {
+
+    public void UpdateDataCategory(ProgressBar progressBar, String collection, CategoryModel categoryModel, String docsID) {
         progressBar.setVisibility(View.VISIBLE);
         db.collection(collection).document(docsID)
-                .update("CategoryId", categoryModel.getCategoryId(),
-                        "CategoryName", categoryModel.getCategoryName())
+                .update("categoryId", categoryModel.getCategoryId(),
+                        "categoryName", categoryModel.getCategoryName())
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
