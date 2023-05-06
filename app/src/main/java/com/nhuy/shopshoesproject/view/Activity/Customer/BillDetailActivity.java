@@ -53,12 +53,12 @@ public class BillDetailActivity extends AppCompatActivity {
         billController = new BillController(this);
 
         img = findViewById(R.id.order_back);
-//        if (getIntent().getExtras().getBoolean("isAdmin"))
-//            currentUserId = getIntent().getExtras().getString("idCustomer");
-//
-//        else currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        if (getIntent().getExtras().getBoolean("isAdmin"))
+            ID = getIntent().getExtras().getString("idCustomer");
 
-        ID = getIntent().getExtras().getString("orderID");
+        else ID = getIntent().getExtras().getString("orderID");
+
+//        ID = getIntent().getExtras().getString("orderID");
 
         billController.getBillFromFirebase(ID, new OrderController.FirebaseCallback() {
             @Override
