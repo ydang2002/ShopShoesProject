@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 import com.nhuy.shopshoesproject.R;
 import com.nhuy.shopshoesproject.controller.Customer.BillController;
 import com.nhuy.shopshoesproject.controller.Customer.OrderController;
@@ -27,6 +29,7 @@ public class BillDetailActivity extends AppCompatActivity {
     private OrderModel order;
     private ImageView img;
     private BillController billController;
+    private String currentUserId;
 
 
     private TextView orderID, orderPrice, orderstatus, orderDate, orderQuantity, address, comment;
@@ -54,13 +57,14 @@ public class BillDetailActivity extends AppCompatActivity {
 
         img = findViewById(R.id.order_back);
         if (getIntent().getExtras().getBoolean("isAdmin"))
-            ID = getIntent().getExtras().getString("idCustomer");
+            currentUserId = getIntent().getExtras().getString("idCustomer");
 
-        else ID = getIntent().getExtras().getString("orderID");
+        else currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-//        ID = getIntent().getExtras().getString("orderID");
 
-        billController.getBillFromFirebase(ID, new OrderController.FirebaseCallback() {
+        ID = getIntent().getExtras().getString("orderID");
+
+        billController.getBillFromFirebase(ID, currentUserId, new OrderController.FirebaseCallback() {
             @Override
             public void onCallback(ArrayList<OrderModel> orderModelArrayList) {
                 order = orderModelArrayList.get(0);

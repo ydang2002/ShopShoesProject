@@ -58,7 +58,7 @@ public class BillController {
             }
         });
     }
-    public void getBillFromFirebase(String ID,OrderController.FirebaseCallback firebaseCallback) {
+    public void getBillFromFirebase(String ID,  String currentUserId, OrderController.FirebaseCallback firebaseCallback) {
         databaseReference = database.getReference(Constants.BILL).child(currentUserId).child(ID);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override

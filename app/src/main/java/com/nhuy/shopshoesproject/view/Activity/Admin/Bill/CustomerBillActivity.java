@@ -53,5 +53,6 @@ public class CustomerBillActivity extends AppCompatActivity {
     }
 
     public void goBack(View view) {
+        finish();
     }
 }
