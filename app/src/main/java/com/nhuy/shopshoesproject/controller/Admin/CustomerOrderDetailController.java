@@ -114,7 +114,7 @@ public class CustomerOrderDetailController {
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
-                                    showMessage("Đang xử lý ...");
+//                                    showMessage("Đang xử lý ...");
                                 }
                             });
 

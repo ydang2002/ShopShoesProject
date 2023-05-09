@@ -33,7 +33,6 @@ public class CustomerOrderDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_customer_order_detail_main);
 
         initAll();
-        confirmOrderStatus();
     }
 
     private void initAll() {
@@ -53,6 +52,7 @@ public class CustomerOrderDetailActivity extends AppCompatActivity {
 
         customerOrderDetailController = new CustomerOrderDetailController(CustomerOrderDetailActivity.this);
         customerOrderDetailController.getOrderFromFirebase(ID, orderID, comment, address, price, quantity, date, status, recyclerView, CustomerOrderDetailActivity.this, idCustomer);
+        confirmOrderStatus();
     }
 
     private void confirmOrderStatus() {
