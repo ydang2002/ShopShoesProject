@@ -91,6 +91,12 @@
             android:name=".view.Activity.Customer.MainActivity"
             android:exported="false" />
         <activity
+            android:name=".view.Activity.Customer.FilterSearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.Activity.Customer.UserManage"
+            android:exported="false" />
+        <activity
             android:name=".view.Activity.Customer.CustomersLoginActivity"
             android:exported="true">
             <intent-filter>

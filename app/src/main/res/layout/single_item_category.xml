@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Filter_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="7dp">
+    <LinearLayout
+        android:id="@+id/cat_kids"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingStart="10dp"
+        android:paddingTop="@dimen/category_pading_top_bottom"
+        android:paddingEnd="10dp"
+        android:paddingBottom="@dimen/category_pading_top_bottom">
+        <TextView
+            android:id="@+id/Filter_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:maxLength="10"
+            android:ellipsize="end"
+            android:text="Adidas" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
