@@ -98,7 +98,7 @@ public class UpdateProductActivity extends AppCompatActivity {
         uploadPhotoBtn = findViewById(R.id.upload_image_btn_update);
         productImg = findViewById(R.id.product_image_update);
         updateBtn = findViewById(R.id.btn_update);
-        deleteBtn = findViewById(R.id.btn_delete);
+//        deleteBtn = findViewById(R.id.btn_delete);
 
         nameEt = findViewById(R.id.product_name_update);
         priceEt = findViewById(R.id.price_edt_update);
