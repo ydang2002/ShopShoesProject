@@ -74,7 +74,6 @@
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:singleLine="true"
-                    android:text="admin@gmail.com"
                     android:textColorHint="@color/text_color" />
 
 
@@ -92,7 +91,6 @@
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:singleLine="true"
-                    android:text="12345678"
                     android:textColorHint="@color/text_color" />
 
 
