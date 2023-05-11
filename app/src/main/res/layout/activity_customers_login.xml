@@ -106,7 +106,7 @@
                     android:background="@drawable/edittext_bg"
                     android:drawableStart="@drawable/ic_baseline_lock_24"
                     android:drawablePadding="10dp"
-                    android:hint="Email"
+                    android:hint="Password"
                     android:inputType="textPassword"
                     android:paddingStart="10dp"
                     android:paddingLeft="10dp"
